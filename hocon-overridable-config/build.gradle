@@ -1,0 +1,41 @@
+plugins {
+  id 'java'
+}
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(11)
+  }
+}
+
+group = 'io.agatsenko'
+version = '0.1.0'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation(
+      'com.typesafe:config:1.4.+',
+      'com.google.guava:guava:31.0.1-jre',
+  )
+
+  testCompileOnly(
+      'org.projectlombok:lombok:1.18.22',
+  )
+
+  testAnnotationProcessor(
+      'org.projectlombok:lombok:1.18.22',
+  )
+
+  testImplementation(
+      'org.junit.jupiter:junit-jupiter:5.8.+',
+      'org.assertj:assertj-core:3.+',
+  )
+}
+
+test {
+  useJUnitPlatform()
+}
+

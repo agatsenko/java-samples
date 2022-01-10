@@ -1,0 +1,3 @@
+rootProject.name = 'java-samples'
+
+include 'hocon-overridable-config'
